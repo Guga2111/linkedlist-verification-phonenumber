@@ -17,7 +17,7 @@ void insert(char x, Node *head) {
 }
 
 void printList(Node *head) {
-    Node *current = head->next; // Skip the dummy head node
+    Node *current = head->next; 
     while (current != NULL) {
         printf("%c  ", current->data);
         current = current->next;
@@ -49,7 +49,7 @@ void insertMiddle(char x, Node *head, int position) {
 }
 
 void verifyFirstParenthesis(Node *head) {
-    Node *current = head->next; // Skip the dummy head node
+    Node *current = head->next; 
     if (current->data == '(') {
         return;
     } else {
@@ -91,7 +91,7 @@ void verifyHyphen(Node *head){
 
 int main() {
     Node *head = (Node *)malloc(sizeof(Node));
-    head->next = NULL; // Initialize to empty list
+    head->next = NULL; 
 
     int option;
     char simpleInsert;
@@ -110,14 +110,14 @@ int main() {
                 break;
             case 1:
                 printf("Insert the character: \n");
-                scanf(" %c", &simpleInsert); // Notice the space before %c to skip whitespace
+                scanf(" %c", &simpleInsert); 
                 insert(simpleInsert, head);
                 break;
             case 2:
                 printf("Insert the position in the list you want to allocate: \n");
                 scanf("%d", &positionToInsert);
                 printf("Insert the character: \n");
-                scanf(" %c", &preciseInsert); // Notice the space before %c to skip whitespace
+                scanf(" %c", &preciseInsert); 
                 insertMiddle(preciseInsert, head, positionToInsert);
                 break;
             case 3:
@@ -136,7 +136,6 @@ int main() {
 
     } while (option != 0);
 
-    // Free allocated memory
     Node *current = head;
     while (current != NULL) {
         Node *temp = current;
